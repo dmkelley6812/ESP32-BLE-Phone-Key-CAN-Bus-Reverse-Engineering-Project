@@ -18,5 +18,13 @@ A DIY Tesla-style phone key built for a 2017 GMC Sierra 1500, using an ESP32 and
   - Companion phone app with shared secret challenge/nonce to prevent message replay/spoofing
  
   
+# CAN Signals Needed
+- Ignition Status
+- Gear (P)
+- Lock
+- Unlock
 
-  
+# Hardware
+- ESP32 Board
+- CAN Transceiver (sn65hvd230)
+- OBDII Dongle/Pigtail
