@@ -28,3 +28,7 @@ A DIY Tesla-style phone key built for a 2017 GMC Sierra 1500, using an ESP32 and
 - ESP32 Board
 - CAN Transceiver (sn65hvd230)
 - OBDII Dongle/Pigtail
+
+# Resources
+- CABANBA: https://github.com/commaai/openpilot/tree/master/tools/cabana
+- GMLAN Bible: https://docs.google.com/spreadsheets/d/1qEwOXSr3bWoc2VUhpuIam236OOZxPc2hxpLUsV0xkn0/edit?gid=12#gid=12
