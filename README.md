@@ -32,3 +32,14 @@ A DIY Tesla-style phone key built for a 2017 GMC Sierra 1500, using an ESP32 and
 # Resources
 - CABANBA: https://github.com/commaai/openpilot/tree/master/tools/cabana
 - GMLAN Bible: https://docs.google.com/spreadsheets/d/1qEwOXSr3bWoc2VUhpuIam236OOZxPc2hxpLUsV0xkn0/edit?gid=12#gid=12
+
+
+
+#Current Status
+
+As part of the CAN signal reverse engineering process, I realized I didn't really like using SavvyCAN. It seems so old school and clunky, so I built a new browser based CAN anlysis tool called browserCAN. You can find it at browsercan.netlify.app
+<img width="1893" height="983" alt="image" src="https://github.com/user-attachments/assets/53c843e5-644f-40b6-a08b-5573cfc17e49" />
+
+Browser can is 100% client side using the web serial API to interface with an SLCAN hardware device. In its current iteration, it offers SLCAN formatted CAN file upload and analysis as well as live CAN data streaming via the Web Serial API with frame analysis, byte and bit graphing, and SignalScout reverse engineering tools. 
+
+I've also built the CAN bus sniffer using a generic ESP32 Dev Module and a CAN transciever wired up to an ODBII pigtail. 
