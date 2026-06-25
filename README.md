@@ -35,7 +35,7 @@ A DIY Tesla-style phone key built for a 2017 GMC Sierra 1500, using an ESP32 and
 
 
 
-#Current Status
+# Current Status
 
 As part of the CAN signal reverse engineering process, I realized I didn't really like using SavvyCAN. It seems so old school and clunky, so I built a new browser based CAN anlysis tool called browserCAN. You can find it at browsercan.netlify.app
 <img width="1893" height="983" alt="image" src="https://github.com/user-attachments/assets/53c843e5-644f-40b6-a08b-5573cfc17e49" />
@@ -43,3 +43,9 @@ As part of the CAN signal reverse engineering process, I realized I didn't reall
 Browser can is 100% client side using the web serial API to interface with an SLCAN hardware device. In its current iteration, it offers SLCAN formatted CAN file upload and analysis as well as live CAN data streaming via the Web Serial API with frame analysis, byte and bit graphing, and SignalScout reverse engineering tools. 
 
 I've also built the CAN bus sniffer using a generic ESP32 Dev Module and a CAN transciever wired up to an ODBII pigtail. 
+
+
+# Up Next:
+- Continued iterations of browserCAN web app
+- Perform the actual reverse engineering of my truck's CAN signals to try to isolate the relevant signals needed to send lock/unlock commands and check vehicle status.
+- Write firmware for another ESP32 to handle the actual phone key logic and CAN injection
