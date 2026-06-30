@@ -38,6 +38,9 @@ A DIY Tesla-style phone key built for a 2017 GMC Sierra 1500, using an ESP32 and
 
 # Current Status
 
+I've discovered that the door lock commands likely don't live on the HSCAN network and are more likely on the SWCAN network that I might have to tap closer to the BCM to surpass the Gateway. This will require building a different CAN sniffer using an SWCAN transceiver that can handle 33.33kbps, 12V wakeup, etc. 
+
+
 As part of the CAN signal reverse engineering process, I realized I didn't really like using SavvyCAN. It seems so old school and clunky, so I built a new browser based CAN anlysis tool called browserCAN. You can find it at browsercan.netlify.app
 <img width="1893" height="983" alt="image" src="https://github.com/user-attachments/assets/53c843e5-644f-40b6-a08b-5573cfc17e49" />
 
@@ -48,5 +51,5 @@ I've also built the CAN bus sniffer using a generic ESP32 Dev Module and a CAN t
 
 # Up Next:
 - Continued iterations of browserCAN web app
-- Perform the actual reverse engineering of my truck's CAN signals to try to isolate the relevant signals needed to send lock/unlock commands and check vehicle status.
-- Write firmware for another ESP32 to handle the actual phone key logic and CAN injection
+- Build SWCAN sniffer/injector using a another ESP32 and an SWCAN transceiver. Try to tap into BCM SWCAN/GMLAN network and sniff for lock/unlock commands.
+- Once CAN signals are confirmed and replay is confirmed to work from ESP32, write firmware to handle Phone Key/RSSI signal strength logic.
