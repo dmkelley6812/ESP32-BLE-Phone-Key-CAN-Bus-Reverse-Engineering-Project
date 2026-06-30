@@ -38,15 +38,18 @@ A DIY Tesla-style phone key built for a 2017 GMC Sierra 1500, using an ESP32 and
 
 # Current Status
 
+### Problems with HS-CAN
 I've discovered that the door lock commands likely don't live on the HSCAN network and are more likely on the SWCAN network that I might have to tap closer to the BCM to surpass the Gateway. This will require building a different CAN sniffer using an SWCAN transceiver that can handle 33.33kbps, 12V wakeup, etc. 
 
-
-As part of the CAN signal reverse engineering process, I realized I didn't really like using SavvyCAN. It seems so old school and clunky, so I built a new browser based CAN anlysis tool called browserCAN. You can find it at browsercan.netlify.app
+### browserCAN Development
+As part of the CAN signal reverse engineering process, I realized I didn't really like using SavvyCAN. It seems so old school and clunky, so I built a new browser based CAN anlysis tool called browserCAN. You can find it at [browsercan.netlify.app](https://browsercan.netlify.app/)
 <img width="1893" height="983" alt="image" src="https://github.com/user-attachments/assets/53c843e5-644f-40b6-a08b-5573cfc17e49" />
 
 Browser can is 100% client side using the web serial API to interface with an SLCAN hardware device. In its current iteration, it offers SLCAN formatted CAN file upload and analysis as well as live CAN data streaming via the Web Serial API with frame analysis, byte and bit graphing, and SignalScout reverse engineering tools. 
 
-I've also built the CAN bus sniffer using a generic ESP32 Dev Module and a CAN transciever wired up to an ODBII pigtail. 
+### The Hardware
+I successfully built a super simple CAN sniffer using an ESP32, sn65hvd230 CAN transceiver, OBD-II pigtail. It's running the esp32-slcan firmware (using the later TWAI version). Works perfectly along with browserCAN to sniff CAN signals, send UDS commands, etc. 
+
 
 
 # Up Next:
